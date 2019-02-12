@@ -28,7 +28,7 @@ public class FileOperation {
         Scanner scanner;
 
         try {
-            String path = new File("").getAbsolutePath()+"/src/my/set/";
+            String path = new File("").getAbsolutePath()+"/src/main/java/my/set/";
             File file = new File(path + filename);
             if (file.exists()) {
                 FileInputStream fis = new FileInputStream(file);
