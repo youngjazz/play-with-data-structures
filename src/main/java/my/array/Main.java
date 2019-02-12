@@ -1,4 +1,5 @@
-import my.array.MyArray;
+package my.array;
+
 import my.stack.ArrayStack;
 
 public class Main {

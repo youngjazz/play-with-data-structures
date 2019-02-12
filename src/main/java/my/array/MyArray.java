@@ -15,6 +15,15 @@ public class MyArray<E> {
         this.data = (E[]) new Object[capacity];
     }
 
+
+    public MyArray(E[] arr){
+        this.size = arr.length;
+        this.data = (E[]) new Object[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            data[i] = arr[i];
+        }
+    }
+
     /**
      * 无参构造器, 默认数组容量为10
      */
@@ -224,5 +233,15 @@ public class MyArray<E> {
         }
 
         data = newData;
+    }
+
+    public void swap(int i, int j) {
+
+        if (i < 0 || i >= size || j < 0 || j >= size) {
+            throw new IllegalArgumentException("Index is illegal.");
+        }
+        E temp = data[i];
+        data[i] = data[j];
+        data[j] = temp;
     }
 }

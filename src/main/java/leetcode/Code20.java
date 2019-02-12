@@ -8,7 +8,7 @@ import java.util.Stack;
  * @author leon
  * @since 2018-12-25
  */
-public class code20 {
+public class Code20 {
 
     public boolean isValid(String s) {
 
@@ -37,7 +37,7 @@ public class code20 {
     }
 
     public static void main(String[] args) {
-        System.out.println(new code20().isValid("{}[]()"));
-        System.out.println(new code20().isValid("{}]()"));
+        System.out.println(new Code20().isValid("{}[]()"));
+        System.out.println(new Code20().isValid("{}]()"));
     }
 }

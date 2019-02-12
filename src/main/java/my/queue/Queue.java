@@ -1,7 +1,6 @@
 package my.queue;
 
 /**
- * todo
  *
  * @author leon
  * @since 2018-12-25
