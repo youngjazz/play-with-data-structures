@@ -7,6 +7,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 /**
  * 二分搜索树
  *
+ * 缺点: 如果依次add有序数据, 二分搜索树就会退化为链表, 可通过AVL树(自平衡二叉查找树)解决
  * @author leon
  * @since 2019-01-07
  */
