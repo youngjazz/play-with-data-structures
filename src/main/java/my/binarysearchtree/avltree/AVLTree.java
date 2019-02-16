@@ -5,6 +5,8 @@ import java.util.ArrayList;
 /**
  * 平衡二分搜索树
  * <p>
+ * AVL是第一个自平衡二分查找树
+ * <p>
  * 平衡: 任意节点左右子树高度差不超过1
  * 可通过标注节点高度,计算平衡因子
  * 叶子节点标1, 非叶子节点使用左右子树最大值+1作为高度
@@ -259,26 +261,26 @@ public class AVLTree<K extends Comparable<K>, V> {
         } else if (key.compareTo(node.key) > 0) {
             node.right = remove(node.right, key);
             retNode = node;
-        }else{
-            if(node.left == null){
+        } else {
+            if (node.left == null) {
                 Node rightNode = node.right;
                 node.right = null;
-                size --;
+                size--;
                 retNode = rightNode;
-            }else if(node.right == null){
+            } else if (node.right == null) {
                 Node leftNode = node.left;
                 node.left = null;
-                size --;
+                size--;
                 retNode = leftNode;
-            }else{
+            } else {
                 //使用右子树最小值最为该点的后继
                 Node successor = min(node.right);
                 successor.left = node.left;
                 successor.right = remove(node.right, successor.key);
-                node.left = node.right =null;
+                node.left = node.right = null;
 
                 retNode = successor;
-                if(retNode == null){
+                if (retNode == null) {
                     return null;
                 }
 
@@ -290,23 +292,23 @@ public class AVLTree<K extends Comparable<K>, V> {
 
                 //平衡维护
                 //LL
-                if(balanceFactor > 1 && getBalanceFactor(retNode.left) >= 0){
+                if (balanceFactor > 1 && getBalanceFactor(retNode.left) >= 0) {
                     return rightRotate(retNode);
                 }
 
                 //RR
-                if(balanceFactor < -1 && getBalanceFactor(retNode.right) <=0){
+                if (balanceFactor < -1 && getBalanceFactor(retNode.right) <= 0) {
                     return leftRoate(retNode);
                 }
 
                 //LR
-                if(balanceFactor > 1 && getBalanceFactor(retNode.left) < 0){
+                if (balanceFactor > 1 && getBalanceFactor(retNode.left) < 0) {
                     retNode.left = leftRoate(node.left);
                     return rightRotate(retNode);
                 }
 
                 //RL
-                if(balanceFactor < -1 && getBalanceFactor(retNode.left) > 0){
+                if (balanceFactor < -1 && getBalanceFactor(retNode.left) > 0) {
                     retNode.right = rightRotate(retNode.right);
                     return leftRoate(retNode);
                 }
@@ -315,8 +317,8 @@ public class AVLTree<K extends Comparable<K>, V> {
         return retNode;
     }
 
-    private Node min(Node node){
-        if(node.left == null){
+    private Node min(Node node) {
+        if (node.left == null) {
             return node;
         }
 
