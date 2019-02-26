@@ -1,3 +1,5 @@
+package code1_100;
+
 import java.util.Stack;
 
 /**
