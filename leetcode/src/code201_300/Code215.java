@@ -1,4 +1,4 @@
-package code101_200;
+package code201_300;
 
 /**
  * 数组中第K大元素
@@ -62,6 +62,37 @@ public class Code215 {
             int temp = nums[j];
             nums[j] = nums[i];
             nums[i] = temp;
+        }
+    }
+
+    /**
+     * @author leon
+     * @date 2019-03-20
+     */
+    public static class Code226 {
+
+        public class TreeNode {
+            int val;
+            TreeNode left;
+            TreeNode right;
+
+            TreeNode(int x) {
+                val = x;
+            }
+        }
+
+        class Solution {
+            public TreeNode invertTree(TreeNode root) {
+                if (root != null) {
+                    TreeNode left = root.left;
+                    TreeNode right = root.right;
+                    root.left = invertTree(right);
+                    root.right = invertTree(left);
+                }
+
+                return root;
+            }
+
         }
     }
 }

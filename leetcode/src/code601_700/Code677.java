@@ -1,3 +1,5 @@
+package code601_700;
+
 import java.util.TreeMap;
 
 /**

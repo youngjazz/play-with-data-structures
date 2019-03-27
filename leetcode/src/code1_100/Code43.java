@@ -1,7 +1,5 @@
 package code1_100;
 
-import java.util.jar.JarEntry;
-
 /**
  * 字符串相乘
  * <p>
